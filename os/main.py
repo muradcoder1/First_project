@@ -11,10 +11,18 @@ def main():
            print(item)
     elif choice=="2":
          filename=input("filemame")
-         os.makedirs(filename)
+         try:
+            
+            os.makedirs(filename)
+         except FileExistsError:
+            print("This file is exists please try another")
     elif choice=="3":
-         filename=input("filename")
-         os.rmdir(filename)
+        filename=input("filename")
+        try:
+            
+            os.rmdir(filename)
+        except FileNotFoundError:
+            print("There is not the file")
     else:
         print("Sistem eror")
 #__name__
