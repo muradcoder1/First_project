@@ -1,14 +1,19 @@
 import os 
 #create main function
+def list_directiry(path="."):
+     print("Contents of directiry")
+     for item in os.listdir():
+           print(item)
+
 def main():
     print("1. List contents of current directory")
     print("2. Create a new directory")
     print("3. Delete a directory")
     choice=input("What do you need 1/2/3")
     if choice=="1":
-        print(os.listdir())
-        for item in os.listdir():
-           print(item)
+        list_directiry()
+        
+       
     elif choice=="2":
          filename=input("filemame")
          try:
